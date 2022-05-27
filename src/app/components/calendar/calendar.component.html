@@ -1,0 +1,63 @@
+<div class="component">
+    <div class="calendar">
+        <div class="calendar__header">
+            <h3 class="calendar__title">Buscar restaurante <span class="calendar__span" *ngIf="restaurante.offers.offer">-{{restaurante.offers.offer}}%</span></h3>
+            <p class="calendar__desc">Servicio gratuito • Reserva confirmada inmediatamente</p>
+        </div>
+        <p class="calendar__reservas">Ya hay <strong>10 reservas</strong> hoy 🔥</p>
+        <ul class="calendar__trail">
+            <li class="calendar__item active">
+                <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill-rule="evenodd"><path d="M22.5 7.5V3.75a.75.75 0 0 0-.75-.75H18V1.5a.75.75 0 0 0-1.5 0V3h-9V1.5a.75.75 0 0 0-1.5 0V3H2.25a.75.75 0 0 0-.75.75V7.5h21Z"></path><path d="M17.25 14.5h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5Zm0 3.5h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5Zm-4.5-3.5h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5Zm0 3.5h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5Zm-4.5-3.5h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5Zm0 3.5h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5ZM1.5 9v12.75c0 .414.336.75.75.75h19.5a.75.75 0 0 0 .75-.75V9h-21Z"></path></g></svg>
+                Fecha
+            </li>
+            <li class="calendar__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M15.53 14.47a.75.75 0 0 1-1.06 1.06l-3-3a.75.75 0 0 1-.22-.53V6a.75.75 0 1 1 1.5 0v5.69l2.78 2.78Z"></path><path d="M12 3c-4.963 0-9 4.037-9 9s4.037 9 9 9 9-4.037 9-9-4.037-9-9-9m0 19.5C6.21 22.5 1.5 17.79 1.5 12S6.21 1.5 12 1.5 22.5 6.21 22.5 12 17.79 22.5 12 22.5"></path></g></svg>
+            </li>
+            <li class="calendar__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><g fill-rule="evenodd"><path d="M9 6c0-1.654 1.346-3 3-3s3 1.346 3 3v2.25c0 1.654-1.346 3-3 3s-3-1.346-3-3V6Zm3 6.75c2.481 0 4.5-2.019 4.5-4.5V6c0-2.481-2.019-4.5-4.5-4.5A4.505 4.505 0 0 0 7.5 6v2.25c0 2.481 2.019 4.5 4.5 4.5Z"></path><path d="M15.75 15h-7.5a6.756 6.756 0 0 0-6.75 6.75.75.75 0 0 0 1.5 0 5.256 5.256 0 0 1 5.25-5.25h7.5A5.256 5.256 0 0 1 21 21.75a.75.75 0 0 0 1.5 0A6.756 6.756 0 0 0 15.75 15"></path></g></svg>
+            </li>
+            <li class="calendar__item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill-rule="evenodd"><path d="M12 3c-4.963 0-9 4.037-9 9s4.037 9 9 9 9-4.037 9-9-4.037-9-9-9m0 19.5C6.21 22.5 1.5 17.79 1.5 12S6.21 1.5 12 1.5 22.5 6.21 22.5 12 17.79 22.5 12 22.5"></path><path d="M14.5 14a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm2.273-6.773a.75.75 0 0 1 0 1.06l-8.485 8.486a.75.75 0 0 1-1.061-1.06l8.485-8.486a.75.75 0 0 1 1.061 0ZM9.5 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"></path></g></svg>
+            </li>
+        </ul>
+        <div class="calendar__container">
+            <div class="calendar__overflow">
+                <ul class="calendar__slider" [ngStyle]="{ width : setWidth(), 'grid-template-columns' : setGrid(), transform : moveSlider() }">
+                    <li class="calendar__move" *ngFor="let month of year">
+                        <p class="calendar__month">{{month.month}} de 2022</p>
+                        <ul class="calendar__dates">
+                            <li class="calendar__date">Lun</li>
+                            <li class="calendar__date">Mar</li>
+                            <li class="calendar__date">Mié</li>
+                            <li class="calendar__date">Jue</li>
+                            <li class="calendar__date">Vie</li>
+                            <li class="calendar__date">Sáb</li>
+                            <li class="calendar__date">Dom</li>
+                        </ul>
+                        <ul class="calendar__dates number">
+                            <ng-container>
+                                <li 
+                                    class="calendar__day" 
+                                    *ngFor="let day of month.days; let i = index"
+                                    [ngClass]="{ 'inactive' : month.current && i + 1 < today, 'active' : month.current && i + 1 === today }">
+                                    <p class="calendar__number active">{{ i + 1 }}</p>
+                                    <p class="calendar__percen" *ngIf="restaurante.offers.offer">-{{restaurante.offers.offer}}%</p>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <button class="calendar__arrow left" (click)="prevNumber()" [disabled]="number === 0" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="calendar__svg"><path fill-rule="evenodd" d="M15.749 20.5c-.24 0-.48-.086-.673-.26l-8.249-7.496a1 1 0 0 1 0-1.479l8.249-7.504a1 1 0 0 1 1.346 1.478l-7.436 6.765 7.436 6.756a1.002 1.002 0 0 1-.673 1.74"></path></svg>
+            </button>
+            <button class="calendar__arrow rght" (click)="nextNumber()" [disabled]="number === year.length" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="calendar__svg"><path fill-rule="evenodd" d="M8.25 20.5a1.002 1.002 0 0 1-.673-1.74l7.436-6.756-7.436-6.765a1 1 0 1 1 1.346-1.478l8.249 7.504a1 1 0 0 1 0 1.479L8.923 20.24c-.193.174-.433.26-.673.26"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div class="yums">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" display="block" class="yums__svg"><g fill-rule="evenodd"><path d="M12 1.5c5.799 0 10.5 4.701 10.5 10.5S17.799 22.5 12 22.5 1.5 17.799 1.5 12 6.201 1.5 12 1.5ZM12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"></path><path d="M10.224 18.664c.725 0 1.333-.187 1.824-.56.49-.373.837-.853 1.04-1.44l3.52-10.048h-2.016l-2.016 6.528-2.272-6.528H8.096L11.408 15c-.107.352-.208.645-.304.88a2.733 2.733 0 0 1-.288.552.822.822 0 0 1-.32.28.917.917 0 0 1-.384.08c-.117 0-.261-.013-.432-.04a4.136 4.136 0 0 1-.528-.12v1.856a3.326 3.326 0 0 0 1.072.176Z"></path></g></svg>
+        <p class="yums__p">Haz una reserva en TheFork para ganar Yums y poder disfrutar de descuentos de fidelidad exclusivos.</p>
+    </div>
+</div>

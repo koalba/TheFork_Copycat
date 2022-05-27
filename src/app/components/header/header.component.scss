@@ -1,0 +1,68 @@
+@import "mixins";
+
+.register {
+  @include d-flex(flex-end);
+  position: relative;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  padding: 0.75em 1em .5em;
+
+  color: var(--c-accent);
+  background-color: var(--c-light-grey);
+
+  transition: all 0.5s ease;
+
+  &__li + &__li {
+    margin-left: 0.75em;
+  }
+
+  &__li + &__li &__a {
+    &::before {
+      content: "|";
+      color: var(--c-grey);
+      margin-right: 0.75em;
+    }
+  }
+}
+
+.header {
+  position: sticky; // Con cariño <3
+  top:0;
+  z-index: 2;
+
+  background-color: white;
+  box-shadow: -2px 6px 10px 0 rgba(0, 0, 0, 0.08);
+
+  &__nav {
+    @include d-flex();
+    padding: 1rem 1.25rem 1rem 1.5rem;
+  }
+
+  &__logo {
+    width: 8.25rem;
+
+    color: var(--black);
+
+    &--green {
+      color: var(--c-accent);
+    }
+  }
+
+  &__a {
+    @include d-flex(flex-end, center);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: var(--c-accent);
+  }
+
+  &__svg {
+    width: 1.15rem;
+    margin: 0 0.35em 0.15em 0;
+  }
+}

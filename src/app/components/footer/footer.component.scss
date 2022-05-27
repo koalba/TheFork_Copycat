@@ -1,0 +1,80 @@
+.footer{
+    margin-top: 2rem;
+    font-size: .85rem;
+    font-weight: 600;
+
+    color: white;
+    background-color: black;
+
+    .container{
+        max-width: 82rem;
+    }
+
+    &__optional{
+        padding: .5rem 0;
+        background-color: var(--c-main-text);
+    }
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__column{
+        flex-basis: 20%;
+        min-width: 10rem;
+    }
+
+    &__column:nth-child(2){
+        flex-basis: 60%;
+    }
+
+    &__title{
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__app{
+        margin-bottom: 1rem;
+
+        &-img{
+            width: 133px;
+        }
+    }
+
+    &__links{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-flow: row wrap;
+        gap: 1rem;
+    }
+
+    &__link{
+        flex-basis: calc(50% - .5rem);
+    }
+
+    &__rrss{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__rs{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 1rem 1rem 0;
+    }
+
+    &__copy{
+        font-size: 1rem;
+    }
+
+    &__condition{
+        font-size: .75rem;
+        font-weight: 400;
+        text-align: center;
+    }
+}

@@ -1,0 +1,178 @@
+@import "mixins.scss";
+
+.card{
+    position: relative;
+    padding: .5rem .5rem 1rem;
+    box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0);
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &.cover{
+        padding: 0;
+    }
+
+    &.city{
+        padding: 0;
+    }
+    
+    &:hover{
+        box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &__insider{
+        position: absolute;
+        top: -.5rem;
+        right: 1rem;
+        width: auto;
+        z-index: 1;
+    }
+
+    &__image{
+        position: relative;
+        border-radius: .25rem;
+        overflow: hidden;
+    }
+
+    &.cover &__image{
+        width: 100%;
+    }
+
+    &__h2{
+        @include d-flex(flex-start, flex-end);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1rem 1.25rem;
+
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+
+        box-shadow: inset 0px -100px 100px -100px black;
+    }
+
+    &__ul{
+        @include d-flex(flex-start);
+        padding: .25em 0 0;
+    }
+
+    &__li{
+        font-size: .65rem;
+        text-transform: uppercase;
+        // margin-right: 1em;
+
+        &::before{
+            content: "\2022";
+            font-size: 1rem;
+            vertical-align: middle;
+            line-height: 0;
+            margin: 0 .5em; 
+        }
+
+        &:first-child::before{
+            content: none;
+        }
+    }
+
+    &__row{
+        @include d-flex(space-between, flex-start);
+    }
+    
+    &__title{
+        margin: .3rem 0;
+        font-weight: 600;
+
+        &.name{
+            color: var(--c-main-title);
+        }
+    }
+    
+    &__nota{
+        margin-top: .25rem;
+        font-weight: 600;
+        color: var(--c-main-title);
+    }
+
+    &__specs{
+        @include d-flex(flex-start);
+        margin-bottom: .5rem;
+    }
+
+    &__spec{
+        font-size: .65rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: .25em .35em;
+        border-radius: .25em;
+        margin-right: .5em;
+    }
+
+    .insider{
+        background-color: var(--c-insider);
+        color: white;
+    }
+    
+    .double{
+        background-color: var(--c-yums);
+    }
+    
+    .pay{
+        background-color: var(--c-pay);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .michelin{
+        color: var(--c-michelin);
+        background-color: var(--c-michelin-bkg);
+    }
+
+    &__fork{
+       margin: 0 .15rem 0 .05rem;
+    }
+
+    &__p{
+        font-size: .88rem;
+    }
+
+    &__offers{
+        @include d-flex(flex-start, center);
+        margin-top: .5rem;
+        font-size: .88rem;
+    }
+
+    &__offer{
+        
+    }
+
+    .number{
+        background-color: black;
+        color: white;
+        padding: .2em .5em;
+        border-radius: .25em;
+        margin-right: .75rem;
+    }
+
+    .yums{
+        font-size: .78rem;
+        font-weight: 500;
+        box-shadow: inset 0px -2px var(--c-yums);
+    }
+
+    &__desc{
+        font-size: .8rem;
+    }
+
+    &__button{
+        font-size: .75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--c-accent);
+        margin-top: .5rem;
+    }
+
+}

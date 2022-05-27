@@ -1,0 +1,143 @@
+@import "mixins.scss";
+
+.slider{
+    position: relative;
+    margin: .5rem auto;
+
+    &.cover{
+        padding: 0;
+    }
+
+    &__header{
+        @include d-flex(space-between, flex-end);
+        margin-bottom: .75rem;
+        padding: 0 .5rem;
+    }
+
+    &__title{
+        font-size: 1.35rem;
+        font-weight: 600;
+    }
+
+    &__arrows{
+        @include d-flex();
+    }
+
+    &.cover &__arrows{
+        position: absolute;
+        top: calc(50% - 1.6rem);
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &__more{
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--c-accent);
+
+        align-self: stretch;
+        margin-right: .25rem;
+        border-radius: .25rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-a{
+            padding: .5rem 1.5rem;
+        }
+
+        &:hover{
+            color: var(--c-accent-dark);
+            background-color: var(--c-accent-lighter);
+        }
+    }
+    
+    &__arrow{
+        margin-left: .4rem;
+    }
+
+    &.cover &__arrow{
+        margin: 1rem;
+    }
+
+    &__button{
+        cursor: pointer;
+        pointer-events: auto;
+        color: var(--c-arrow);
+        background-color: white;
+
+        box-shadow: inset 0px 0px 0px 1px var(--c-grey);
+        border-radius: .25em;
+
+        transition: all .2s ease;
+
+        &:hover{
+            color: var(--c-accent-dark);
+            background-color: var(--c-accent-lighter);
+            box-shadow: inset 0px 0px 0px 1px black;
+        }
+
+        &.disabled{
+            color: var(--c-arrow-inactive);
+            background-color: var(--c-arrow-inactive-bkg);
+            box-shadow: inset 0px 0px 0px 0px var(--c-grey);
+            cursor: not-allowed;
+        }
+    }
+
+    &__svg{
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: .9rem;
+    }
+
+    &__container{
+        overflow: hidden;
+
+        @media screen and ( max-width: 900px ) {
+            overflow-x: scroll;
+        }
+    }
+
+    &__ul{
+        display: grid;
+        gap: 1rem;
+        padding: .5rem;
+
+        transition: all .5s ease;
+    }
+
+    &.cover &__ul{
+        padding: 0;
+        gap: 0;
+    }
+
+    &__dots{
+        position: relative;
+        top: -2.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__dot{
+        width: .75rem;
+        height: .75rem;
+        border-radius: 50%;
+        background-color: white;
+        opacity: .5;
+        margin: .4rem;
+        cursor: pointer;
+        
+        transition: all .2s ease;
+
+        &.active{
+            opacity: .9;
+            transform-origin: center;
+            transform: scale(1.3);
+        }
+    }
+}

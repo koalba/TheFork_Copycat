@@ -1,0 +1,22 @@
+.restaurante{
+    .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap : 3rem;
+
+        @media screen and (max-width:900px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+app-calendar, app-restaurant{
+    min-width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    app-calendar{
+        display: none;
+    }
+}

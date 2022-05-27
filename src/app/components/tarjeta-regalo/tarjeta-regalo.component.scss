@@ -1,0 +1,54 @@
+@import "mixins.scss";
+
+.regalo {
+  border-left: 0.5rem solid var(--c-accent);
+  //   background-color: var(--c-accent-light);
+  background: linear-gradient(
+    150deg,
+    var(--c-accent-light) 0%,
+    var(--c-accent-lighter) 100%
+  );
+
+  &__container {
+    @include d-flex(flex-start, flex-start);
+    padding: 1rem 0.9rem 1rem 0.9rem;
+
+    @media screen and (max-width : 900px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__svg {
+    width: 5rem;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    padding: 0 1rem;
+
+    @media screen and (max-width : 900px) {
+      width: 90%;
+      font-size: .8rem;
+      margin-bottom: 1rem;
+      padding: 1rem 0 0;
+    }
+  }
+
+  &__h3 {
+    font-weight: 600;
+  }
+
+  &__p {
+    // font-weight: 400;
+  }
+
+  &__button {
+    white-space: nowrap;
+    align-self: center;
+    
+  }
+
+  .button__svg {
+    margin-left: 0.75em;
+  }
+}

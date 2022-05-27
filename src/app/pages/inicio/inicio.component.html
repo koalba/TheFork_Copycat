@@ -1,0 +1,35 @@
+<app-tarjeta-regalo></app-tarjeta-regalo>
+
+<app-buscador></app-buscador>
+
+<app-banner></app-banner>
+
+<app-slider *ngFor="let slider of sliders_offer"
+    [titulo]="slider.titulo"
+    [data]="slider.type"
+    [type]="slider.type"
+    [restaurantes]="slider.data"
+    [numVisibles]=" slider.visibles" 
+    [more]="slider.more"></app-slider>
+
+<app-slider *ngFor="let slider of sliders_restaurant"
+    [titulo]="slider.titulo"
+    [type]="slider.type"
+    [restaurantes]="slider.data"
+    [numVisibles]=" slider.visibles" 
+    [more]="slider.more"></app-slider>
+
+<app-how></app-how>    
+
+<app-slider *ngFor="let slider of sliders_city"
+    [titulo]="slider.titulo"
+    [type]="slider.type"
+    [restaurantes]="slider.data"
+    [numVisibles]=" slider.visibles" 
+    [more]="slider.more"></app-slider>
+
+<app-about></app-about>
+
+<app-property></app-property>
+
+<app-popup-where [open]="openModal"></app-popup-where>

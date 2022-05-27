@@ -1,0 +1,176 @@
+:root {
+  /* ---------- COLOR ---------- */
+
+  --white: white;
+  --black: black;
+
+  --c-accent-buscador: #f2f6f4;
+  --c-accent-lighter: #f3fcf3;
+  --c-accent-light: #ddf0d6;
+  --c-accent-icon: #b8e0ae;
+  --c-accent: #589442;
+  --c-accent-dark: #437132;
+
+  --c-main-text: #3c4048;
+  --c-main-title: black;
+
+  --c-pay: #1c1835;
+  --c-yums: #ffdd00;
+  --c-insider: #28433c;
+  --c-michelin: #be2332;
+  --c-michelin-bkg: #f8e8e9;
+
+  --c-alert: #cb1a23;
+
+  --c-light-grey: #f9fafa;
+  --c-grey: #d5d8dc;
+  --c-grey-dark: #959ba7;
+  --c-buscador-icon: #6f7685;
+
+  --c-arrow: #3c4048;
+  --c-arrow-inactive: #959ba7;
+  --c-arrow-inactive-bkg: #ecedef;
+
+  // --c-accent-red: #cf022b;
+
+  /* ---------- FONT ---------- */
+
+  --ff-main: "Raleway", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-main);
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--c-main-text);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+strong,
+em,
+u,
+b,
+i,
+blockquote {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: 1.5;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+iframe {
+  display: block;
+  width: 100%;
+  /* object-fit: cover; */
+  /* max-width: 100%; */
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+form,
+input,
+select,
+option,
+textarea,
+button {
+  display: block;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  /* appearance: none;
+              -webkit-appearance: none; */
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  /* resize: horizontal;
+              resize: vertical; */
+}
+
+table,
+td,
+tr {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* input::placeholder{
+          
+          } */
+
+.button {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  color: var(--white);
+  background-color: var(--c-accent);
+
+  border-radius: 0.25rem;
+  padding: 0.65em 0.75em;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--c-accent-dark);
+  }
+
+  &__svg {
+    display: inline;
+    vertical-align: text-bottom;
+    width: 1.25em;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 67rem;
+  padding: 1rem 1.25rem;
+  margin: 0 auto;
+}
+
+.title{
+  font-size: 1.35rem;
+  font-weight: 600;
+}

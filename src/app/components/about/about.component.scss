@@ -1,0 +1,15 @@
+.about{
+
+    &__info{
+        font-size: .9rem;
+        margin-bottom: 1rem;
+    }
+
+    &__p{
+        margin-top: 1.25rem;
+
+        a{
+            text-decoration: underline;
+        }
+    }
+}

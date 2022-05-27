@@ -1,0 +1,36 @@
+<div class="popup" *ngIf="open">
+    <div class="popup__container">
+        <div class="popup__header">
+            <h2 class="popup__title">{{offer.nombre}}</h2>
+            <button class="popup__close" (click)="closeModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="popup__x">
+                    <path fill-rule="evenodd" d="m12 10.94 6.22-6.22a.75.75 0 0 1 1.147.956l-.087.104L13.06 12l6.22 6.22a.75.75 0 0 1-.956 1.147l-.104-.087L12 13.06l-6.22 6.22a.75.75 0 0 1-1.147-.956l.087-.104L10.94 12 4.72 5.78a.75.75 0 0 1 .956-1.147l.104.087L12 10.94Z"></path>
+                </svg>
+            </button>
+            <img class="popup__img" [src]="offer.src" [alt]="offer.nombre">
+        </div>
+        <div class="popup__search">
+            <label class="popup__label" for="where">¿Dónde?</label>
+            <div class="popup__input-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="popup__input-svg">
+                    <path fill-rule="evenodd" d="M12 1.5a6.75 6.75 0 0 1 6.75 6.75c0 .82-.146 1.62-.413 2.324-.775 2.588-2.671 6.43-5.69 11.557a.75.75 0 0 1-1.293 0c-3.02-5.127-4.916-8.97-5.675-11.51A6.75 6.75 0 0 1 12 1.5ZM12 6a2.25 2.25 0 1 0 0 4.5A2.25 2.25 0 0 0 12 6Z"></path>
+                </svg>
+                <input class="popup__input" type="text" name="where" placeholder="Dirección exacta, barrio, ciudad..." id="where" [(ngModel)]="value">
+            </div>
+        </div>
+        <ul class="popup__list">
+            <ng-container *ngFor="let ciudad of ciudades">
+                <li class="popup__li" *ngIf="filterCities( ciudad )">
+                    <a href="#" class="popup__a">
+                        <span class="popup__span">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="popup__svg">
+                                <path fill-rule="evenodd" d="M12 1.5a6.75 6.75 0 0 1 6.75 6.75c0 .82-.146 1.62-.413 2.324-.775 2.588-2.671 6.43-5.69 11.557a.75.75 0 0 1-1.293 0c-3.02-5.127-4.916-8.97-5.675-11.51A6.75 6.75 0 0 1 12 1.5ZM12 6a2.25 2.25 0 1 0 0 4.5A2.25 2.25 0 0 0 12 6Z"></path>
+                            </svg>
+                        </span>
+                        <p class="popup__city" [ngStyle]="{ 'text-transform' : value ? 'lowercase' : 'capitalize' }"> <strong *ngIf="value">{{value}}</strong>{{ciudad.toLowerCase().replace(value.toLowerCase(), '')}}</p>
+                    </a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>
